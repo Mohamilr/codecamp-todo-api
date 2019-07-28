@@ -1,11 +1,13 @@
 // import express
-const express = require('express');
+import express from 'express';
 
 // import bodyParser
 const bodyParser = require('body-parser');
 
 // import dotenv for environment variables management
 const dotenv = require('dotenv');
+
+import cors from 'cors';
 
 const appRouter = require('./routes')
 
@@ -15,6 +17,7 @@ dotenv.config();
 // initialize express
 const app = express();
 
+app.use(cors());
 // configure body-parser for express
 app.use(bodyParser.json({ extended: true }));
 
